@@ -18,7 +18,7 @@ defmodule OceanShipLogbooks.ShipDataController do
   # but we put them in here for this example.
   def import_from_csv() do
     File.stream!("ship-data.csv")
-    |> CSV.decode(headers: true)
+    |> CSV.decode!(headers: true)
     |> Stream.filter(fn(x) -> x["Lat3"] != "NA" and x["Lon3"] != "NA" end)
     |> Stream.map(&build_ship/1)
     |> Enum.each(&OceanShipLogbooks.Repo.insert!/1)
@@ -28,7 +28,7 @@ defmodule OceanShipLogbooks.ShipDataController do
     {lat, _} = Float.parse(row["Lat3"])
     {lon, _} = Float.parse(row["Lon3"])
     {utc, _} = Integer.parse(row["UTC"])
-    geom = %Geo.Point{ coordinates: {lat, lon}, srid: 4326}
+    geom = %Geo.Point{coordinates: {lat, lon}, srid: 4326}
     %OceanShipLogbooks.ShipData{ship: row["ShipName"], utc: utc, geom: geom}
   end
 

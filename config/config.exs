@@ -8,7 +8,6 @@ use Mix.Config
 # Configures the endpoint
 config :ocean_ship_logbooks, OceanShipLogbooks.Endpoint,
   url: [host: "localhost"],
-  root: Path.dirname(__DIR__),
   secret_key_base: "6bchl1enMQNo9Xdf/zZ/C7/SggxO3eGUKRugdiFOWbDpgBk64lGDUXTIsp4TTy+b",
   render_errors: [accepts: ~w(html json)],
   pubsub: [name: OceanShipLogbooks.PubSub,
@@ -21,9 +20,15 @@ config :logger, :console,
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
+config :ocean_ship_logbooks,
+  ecto_repos: [OceanShipLogbooks.Repo]
+
+config :ocean_ship_logbooks, OceanShipLogbooks.Repo,
+  types: OceanShipLogbooks.PostgresTypes
 
 # Configure phoenix generators
 config :phoenix, :generators,
   migration: true,
   binary_id: false
+
+import_config "#{Mix.env}.exs"
