@@ -1,5 +1,5 @@
-defmodule OceanShipLogbooks.ShipData do
-  use OceanShipLogbooks.Web, :model
+defmodule OceanShipLogbooks.Data.Ship do
+  use Ecto.Schema
 
   schema "ship_data" do
     field :ship, :string

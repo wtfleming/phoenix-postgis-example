@@ -1,5 +1,5 @@
-defmodule OceanShipLogbooks.ErrorView do
-  use OceanShipLogbooks.Web, :view
+defmodule OceanShipLogbooksWeb.ErrorView do
+  use OceanShipLogbooksWeb, :view
 
   def render("404.html", _assigns) do
     "Page not found"

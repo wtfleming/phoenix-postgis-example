@@ -1,16 +1,13 @@
-defmodule OceanShipLogbooks.ShipDataController do
-  use OceanShipLogbooks.Web, :controller
-  alias OceanShipLogbooks.ShipData
+defmodule OceanShipLogbooksWeb.ShipDataController do
+  use OceanShipLogbooksWeb, :controller
+  alias OceanShipLogbooks.Data
+  alias OceanShipLogbooks.Data.Ship
 
   def index(conn, _params) do
     # For simplicity in this example we hard code against
     # a specific ship name.
-    query = from s in ShipData,
-    where: s.ship == "Endeavour",
-    order_by: [asc: s.utc],
-    select: s
+    ships = Data.list_ship("Endeavour")
 
-    ships = Repo.all(query)
     render(conn, "show_ships.json", ships: ships)
   end
 
@@ -29,7 +26,7 @@ defmodule OceanShipLogbooks.ShipDataController do
     {lon, _} = Float.parse(row["Lon3"])
     {utc, _} = Integer.parse(row["UTC"])
     geom = %Geo.Point{coordinates: {lat, lon}, srid: 4326}
-    %OceanShipLogbooks.ShipData{ship: row["ShipName"], utc: utc, geom: geom}
+    %Ship{ship: row["ShipName"], utc: utc, geom: geom}
   end
 
 end
