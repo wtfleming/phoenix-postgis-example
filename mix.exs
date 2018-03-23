@@ -29,10 +29,10 @@ defmodule OceanShipLogbooks.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.2"},
-     {:phoenix_ecto, "~> 3.0"},
+    [{:phoenix, "~> 1.3.2"},
+     {:phoenix_ecto, "~> 3.2"},
      {:postgrex, ">= 0.0.0"},
-     {:phoenix_html, "~> 2.6"},
+     {:phoenix_html, "~> 2.9.3"},
      {:phoenix_live_reload, "~> 1.0.8", only: :dev},
      {:gettext, "~> 0.13"},
      {:csv, "~> 2.0"},
