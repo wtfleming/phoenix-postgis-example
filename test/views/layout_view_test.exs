@@ -1,3 +1,3 @@
 defmodule OceanShipLogbooks.LayoutViewTest do
-  use OceanShipLogbooks.ConnCase, async: true
+  use OceanShipLogbooksWeb.ConnCase, async: true
 end

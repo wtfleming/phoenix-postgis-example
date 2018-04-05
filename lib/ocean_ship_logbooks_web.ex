@@ -1,4 +1,4 @@
-defmodule OceanShipLogbooks.Web do
+defmodule OceanShipLogbooksWeb do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
@@ -28,20 +28,21 @@ defmodule OceanShipLogbooks.Web do
 
   def controller do
     quote do
-      use Phoenix.Controller
+      use Phoenix.Controller, namespace: OceanShipLogbooksWeb
 
       alias OceanShipLogbooks.Repo
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
 
-      import OceanShipLogbooks.Router.Helpers
-      import OceanShipLogbooks.Gettext
+      import OceanShipLogbooksWeb.Router.Helpers
+      import OceanShipLogbooksWeb.Gettext
     end
   end
 
   def view do
     quote do
-      use Phoenix.View, root: "web/templates"
+      use Phoenix.View, root: "lib/ocean_ship_logbooks_web/templates",
+        namespace: OceanShipLogbooksWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 2, view_module: 1]
@@ -49,9 +50,9 @@ defmodule OceanShipLogbooks.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import OceanShipLogbooks.Router.Helpers
-      import OceanShipLogbooks.ErrorHelpers
-      import OceanShipLogbooks.Gettext
+      import OceanShipLogbooksWeb.Router.Helpers
+      import OceanShipLogbooksWeb.ErrorHelpers
+      import OceanShipLogbooksWeb.Gettext
     end
   end
 
@@ -68,7 +69,7 @@ defmodule OceanShipLogbooks.Web do
       alias OceanShipLogbooks.Repo
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
-      import OceanShipLogbooks.Gettext
+      import OceanShipLogbooksWeb.Gettext
     end
   end
 

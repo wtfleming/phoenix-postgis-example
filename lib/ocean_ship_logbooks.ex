@@ -8,7 +8,7 @@ defmodule OceanShipLogbooks do
 
     children = [
       # Start the endpoint when the application starts
-      supervisor(OceanShipLogbooks.Endpoint, []),
+      supervisor(OceanShipLogbooksWeb.Endpoint, []),
       # Start the Ecto repository
       supervisor(OceanShipLogbooks.Repo, []),
       # Here you could define other workers and supervisors as children
@@ -24,7 +24,7 @@ defmodule OceanShipLogbooks do
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    OceanShipLogbooks.Endpoint.config_change(changed, removed)
+    OceanShipLogbooksWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

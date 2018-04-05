@@ -1,5 +1,5 @@
-defmodule OceanShipLogbooks.ShipDataView do
-  use OceanShipLogbooks.Web, :view
+defmodule OceanShipLogbooksWeb.ShipDataView do
+  use OceanShipLogbooksWeb, :view
 
   def render("show_ships.json", %{ships: ships}) do
     %{ship_data: render_many(ships, OceanShipLogbooks.ShipDataView, "ship_data.json")}

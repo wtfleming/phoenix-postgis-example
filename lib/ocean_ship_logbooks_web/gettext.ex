@@ -1,4 +1,4 @@
-defmodule OceanShipLogbooks.Gettext do
+defmodule OceanShipLogbooksWeb.Gettext do
   @moduledoc """
   A module providing Internationalization with a gettext-based API.
 

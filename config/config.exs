@@ -6,7 +6,7 @@
 use Mix.Config
 
 # Configures the endpoint
-config :ocean_ship_logbooks, OceanShipLogbooks.Endpoint,
+config :ocean_ship_logbooks, OceanShipLogbooksWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "6bchl1enMQNo9Xdf/zZ/C7/SggxO3eGUKRugdiFOWbDpgBk64lGDUXTIsp4TTy+b",
   render_errors: [accepts: ~w(html json)],

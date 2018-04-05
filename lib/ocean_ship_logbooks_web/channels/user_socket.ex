@@ -1,4 +1,4 @@
-defmodule OceanShipLogbooks.UserSocket do
+defmodule OceanShipLogbooksWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels

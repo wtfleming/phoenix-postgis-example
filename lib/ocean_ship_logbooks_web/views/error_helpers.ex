@@ -1,4 +1,4 @@
-defmodule OceanShipLogbooks.ErrorHelpers do
+defmodule OceanShipLogbooksWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """

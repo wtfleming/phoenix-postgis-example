@@ -1,7 +1,7 @@
-defmodule OceanShipLogbooks.Endpoint do
+defmodule OceanShipLogbooksWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :ocean_ship_logbooks
 
-  socket "/socket", OceanShipLogbooks.UserSocket
+  socket "/socket", OceanShipLogbooksWeb.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -35,5 +35,5 @@ defmodule OceanShipLogbooks.Endpoint do
     key: "_ocean_ship_logbooks_key",
     signing_salt: "9EsfQDOC"
 
-  plug OceanShipLogbooks.Router
+  plug OceanShipLogbooksWeb.Router
 end
