@@ -24,4 +24,4 @@ assets/node_modules
 /config/prod.secret.exs
 
 *.csv
-
+.elixir_ls
